@@ -11,7 +11,7 @@
 
 @interface IKLocation ()
 @property (nonatomic, strong) CLLocationManager *locationManager;
-@property (nonatomic, strong) NSMutableArray *delegates;
+@property (nonatomic, strong) NSPointerArray *delegates;
 @property (nonatomic, strong) NSError *error;
 @end
 
@@ -34,23 +34,19 @@
         
         self.locationAvailable = NO;
         self.error = nil;
-        self.delegates = [[NSMutableArray alloc] init];
+        self.delegates = [NSPointerArray weakObjectsPointerArray];
     }
     return self;
 }
 
 - (void) setDelegate:(id)delegate{
-    [self.delegates addObject:delegate];
+    [self.delegates addPointer:(__bridge void *)delegate];
     
     if (_locationAvailable) {
         if ([delegate respondsToSelector:@selector(ikManager:didUpdateToLocation:fromLocation:)]) {
             [delegate ikManager:self didUpdateToLocation:_location fromLocation:_oldLocation];
         }
     }
-}
-
-- (void) removeDelegate:(id)delegate{
-    [self.delegates removeObject:delegate];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
@@ -86,9 +82,13 @@
 }
 
 - (void) notifyDelegatesLocationSuccessful{
-    for (id delegate in self.delegates) {
+    for (int i = 0; i < self.delegates.count; i++) {
+        id delegate = [self.delegates pointerAtIndex:i];
+        
         if ([delegate respondsToSelector:@selector(ikManager:didUpdateToLocation:fromLocation:)]) {
             [delegate ikManager:self didUpdateToLocation:_location fromLocation:_oldLocation];
+        }else{
+            [self.delegates removePointerAtIndex:i];
         }
     }
 }

@@ -21,21 +21,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     [[IKLocation sharedLocation] setDelegate:self];
-    
 }
 
 - (IBAction)pushAnOtherViewController:(id)sender {
     IKMainViewController *anOtherViewController = [[IKMainViewController alloc] init];
     [self.navigationController pushViewController:anOtherViewController
                                         animated:YES];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)ikManagerDidFailWithError:(NSError *)error{
@@ -53,10 +45,4 @@
     self.latitudeLabel.text = [NSString stringWithFormat:@"Latitude: %f",latitude];
     self.longitudeLabel.text = [NSString stringWithFormat:@"Latitude: %f",longitude];
 }
-
--(void) dealloc{
-    [[IKLocation sharedLocation] removeDelegate:self];
-}
-
-
 @end

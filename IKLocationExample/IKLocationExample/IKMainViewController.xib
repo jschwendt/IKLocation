@@ -71,13 +71,33 @@
                         <action selector="pushAnOtherViewController:" destination="-1" eventType="touchUpInside" id="CAu-cN-3Ha"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPg-Ko-zbU">
+                    <rect key="frame" x="79" y="330" width="162" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.36415816326530615" blue="0.093821444914096899" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="162" id="2Vs-Io-TbY"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="162" id="MPa-Y4-Mb3"/>
+                        <constraint firstAttribute="height" constant="30" id="f72-7c-acY"/>
+                    </constraints>
+                    <state key="normal" title="Refresh Location">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="refreshLocatioin:" destination="-1" eventType="touchUpInside" id="O9P-Mw-mo0"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="bPg-Ko-zbU" firstAttribute="top" secondItem="dIl-0N-fuV" secondAttribute="bottom" constant="13" id="03M-ia-BZR"/>
                 <constraint firstItem="0ep-2v-PfS" firstAttribute="top" secondItem="WS1-KU-Dq8" secondAttribute="bottom" constant="54" id="29T-RY-8BP"/>
                 <constraint firstAttribute="trailing" secondItem="r7S-bF-RFS" secondAttribute="trailing" constant="20" id="4OM-t2-S6E"/>
                 <constraint firstItem="dIl-0N-fuV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="79" id="4ug-Bt-mZL"/>
+                <constraint firstItem="bPg-Ko-zbU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="79" id="8Ot-ZJ-C5u"/>
                 <constraint firstItem="r7S-bF-RFS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="9Hh-jt-JNc"/>
+                <constraint firstAttribute="trailing" secondItem="bPg-Ko-zbU" secondAttribute="trailing" constant="79" id="AF4-hv-6u5"/>
                 <constraint firstItem="10C-8t-raf" firstAttribute="top" secondItem="r7S-bF-RFS" secondAttribute="bottom" constant="8" id="IQv-Jl-SXA"/>
                 <constraint firstItem="0ep-2v-PfS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="UWw-aq-pJa"/>
                 <constraint firstItem="r7S-bF-RFS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="a4u-k2-AhY"/>

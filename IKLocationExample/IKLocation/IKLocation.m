@@ -30,6 +30,7 @@
     if (self = [super init]) {
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         [self.locationManager startUpdatingLocation];
         
         self.locationAvailable = NO;
@@ -37,6 +38,18 @@
         self.delegates = [NSPointerArray weakObjectsPointerArray];
     }
     return self;
+}
+
+- (void) refreshLocation{
+    self.locationAvailable = NO;
+    self.error = nil;
+    _oldLocation = nil;
+    _location = nil;
+    _city = nil;
+    _state = nil;
+    _country = nil;
+    
+    [self.locationManager startUpdatingLocation];
 }
 
 - (void) setDelegate:(id)delegate{
@@ -50,6 +63,12 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
+
+    NSTimeInterval howRecent = [newLocation.timestamp timeIntervalSinceNow];
+    if( abs(howRecent) > 5.0 ) {
+        return;
+    }
+
     _oldLocation = oldLocation;
     _location = newLocation;
     _latitude = newLocation.coordinate.latitude;

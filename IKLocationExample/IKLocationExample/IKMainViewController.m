@@ -30,6 +30,10 @@
                                         animated:YES];
 }
 
+- (IBAction)refreshLocatioin:(id)sender {
+    [[IKLocation sharedLocation] refreshLocation];
+}
+
 - (void)ikManagerDidFailWithError:(NSError *)error{
     NSLog(@"%@",error);
 }

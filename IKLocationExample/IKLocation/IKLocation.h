@@ -28,4 +28,5 @@
 
 + (instancetype)sharedLocation;
 - (void) setDelegate:(id)delegate;
+- (void) removeDelegate:(id)delegate;
 @end

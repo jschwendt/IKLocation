@@ -54,5 +54,9 @@
     self.longitudeLabel.text = [NSString stringWithFormat:@"Latitude: %f",longitude];
 }
 
+-(void) dealloc{
+    [[IKLocation sharedLocation] removeDelegate:self];
+}
+
 
 @end

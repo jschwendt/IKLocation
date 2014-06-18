@@ -20,7 +20,7 @@
 
 @property (readonly) CGFloat latitude;
 @property (readonly) CGFloat longitude;
-@property (nonatomic, getter = isLocationAbailable) BOOL locationAvailable;
+@property (nonatomic, getter = isLocationAvailable) BOOL locationAvailable;
 
 @property (nonatomic,readonly) NSString *city;
 @property (nonatomic,readonly) NSString *state;

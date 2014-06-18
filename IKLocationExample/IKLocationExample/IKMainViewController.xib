@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IKMainViewController">
+            <connections>
+                <outlet property="geocodedLocationLabel" destination="r7S-bF-RFS" id="jvV-6E-X6s"/>
+                <outlet property="latitudeLabel" destination="WS1-KU-Dq8" id="q2G-D5-1Ym"/>
+                <outlet property="longitudeLabel" destination="10C-8t-raf" id="bcR-kh-mHV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geocoded Location:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="r7S-bF-RFS">
+                    <rect key="frame" x="20" y="80" width="280" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="hmM-qC-GDQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10C-8t-raf">
+                    <rect key="frame" x="20" y="109" width="280" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="5Sf-bA-2S9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WS1-KU-Dq8">
+                    <rect key="frame" x="20" y="138" width="280" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="c3k-Vh-UNi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show me an other view controller that also needs to know the current location:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="0ep-2v-PfS">
+                    <rect key="frame" x="10" y="213" width="300" height="66"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="66" id="Yra-QA-L83"/>
+                        <constraint firstAttribute="width" constant="300" id="j94-7x-n8A"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIl-0N-fuV">
+                    <rect key="frame" x="79" y="287" width="162" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.36470589040000001" blue="0.22352942819999999" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="162" id="Ff2-dd-jsx"/>
+                        <constraint firstAttribute="height" constant="30" id="zC2-eU-4XO"/>
+                    </constraints>
+                    <state key="normal" title="Push view Controller">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="pushAnOtherViewController:" destination="-1" eventType="touchUpInside" id="CAu-cN-3Ha"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="0ep-2v-PfS" firstAttribute="top" secondItem="WS1-KU-Dq8" secondAttribute="bottom" constant="54" id="29T-RY-8BP"/>
+                <constraint firstAttribute="trailing" secondItem="r7S-bF-RFS" secondAttribute="trailing" constant="20" id="4OM-t2-S6E"/>
+                <constraint firstItem="dIl-0N-fuV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="79" id="4ug-Bt-mZL"/>
+                <constraint firstItem="r7S-bF-RFS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="9Hh-jt-JNc"/>
+                <constraint firstItem="10C-8t-raf" firstAttribute="top" secondItem="r7S-bF-RFS" secondAttribute="bottom" constant="8" id="IQv-Jl-SXA"/>
+                <constraint firstItem="0ep-2v-PfS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="UWw-aq-pJa"/>
+                <constraint firstItem="r7S-bF-RFS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="a4u-k2-AhY"/>
+                <constraint firstItem="10C-8t-raf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="aQG-ds-kdy"/>
+                <constraint firstItem="WS1-KU-Dq8" firstAttribute="top" secondItem="10C-8t-raf" secondAttribute="bottom" constant="8" id="bmw-fz-EWY"/>
+                <constraint firstItem="dIl-0N-fuV" firstAttribute="top" secondItem="0ep-2v-PfS" secondAttribute="bottom" constant="8" id="hWv-q1-nWW"/>
+                <constraint firstItem="WS1-KU-Dq8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="k2s-i4-5XL"/>
+                <constraint firstAttribute="trailing" secondItem="0ep-2v-PfS" secondAttribute="trailing" constant="10" id="p4e-lO-cFS"/>
+                <constraint firstAttribute="trailing" secondItem="WS1-KU-Dq8" secondAttribute="trailing" constant="20" id="rrh-ZD-hXN"/>
+                <constraint firstAttribute="trailing" secondItem="10C-8t-raf" secondAttribute="trailing" constant="20" id="uRQ-Qv-ZDL"/>
+                <constraint firstAttribute="trailing" secondItem="dIl-0N-fuV" secondAttribute="trailing" constant="79" id="xOh-xt-bBI"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

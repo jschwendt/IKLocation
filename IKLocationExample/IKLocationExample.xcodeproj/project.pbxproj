@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		41458EA81951DC2800735C06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41458EA71951DC2800735C06 /* Foundation.framework */; };
+		41458EAA1951DC2800735C06 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41458EA91951DC2800735C06 /* CoreGraphics.framework */; };
+		41458EAC1951DC2800735C06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41458EAB1951DC2800735C06 /* UIKit.framework */; };
+		41458EB21951DC2800735C06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41458EB01951DC2800735C06 /* InfoPlist.strings */; };
+		41458EB41951DC2800735C06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41458EB31951DC2800735C06 /* main.m */; };
+		41458EB81951DC2800735C06 /* IKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41458EB71951DC2800735C06 /* IKAppDelegate.m */; };
+		41458EBA1951DC2800735C06 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41458EB91951DC2800735C06 /* Images.xcassets */; };
+		41458EC11951DC2800735C06 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41458EC01951DC2800735C06 /* XCTest.framework */; };
+		41458EC21951DC2800735C06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41458EA71951DC2800735C06 /* Foundation.framework */; };
+		41458EC31951DC2800735C06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41458EAB1951DC2800735C06 /* UIKit.framework */; };
+		41458ECB1951DC2800735C06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41458EC91951DC2800735C06 /* InfoPlist.strings */; };
+		41458ECD1951DC2800735C06 /* IKLocationExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41458ECC1951DC2800735C06 /* IKLocationExampleTests.m */; };
+		41458ED91951DC5900735C06 /* IKLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 41458ED81951DC5900735C06 /* IKLocation.m */; };
+		41458EDD1951DD2F00735C06 /* IKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41458EDB1951DD2F00735C06 /* IKMainViewController.m */; };
+		41458EDE1951DD2F00735C06 /* IKMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41458EDC1951DD2F00735C06 /* IKMainViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		41458EC41951DC2800735C06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41458E9C1951DC2700735C06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41458EA31951DC2800735C06;
+			remoteInfo = IKLocationExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		41458EA41951DC2800735C06 /* IKLocationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IKLocationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41458EA71951DC2800735C06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		41458EA91951DC2800735C06 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		41458EAB1951DC2800735C06 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		41458EAF1951DC2800735C06 /* IKLocationExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IKLocationExample-Info.plist"; sourceTree = "<group>"; };
+		41458EB11951DC2800735C06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		41458EB31951DC2800735C06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		41458EB51951DC2800735C06 /* IKLocationExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IKLocationExample-Prefix.pch"; sourceTree = "<group>"; };
+		41458EB61951DC2800735C06 /* IKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IKAppDelegate.h; sourceTree = "<group>"; };
+		41458EB71951DC2800735C06 /* IKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IKAppDelegate.m; sourceTree = "<group>"; };
+		41458EB91951DC2800735C06 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		41458EBF1951DC2800735C06 /* IKLocationExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IKLocationExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41458EC01951DC2800735C06 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		41458EC81951DC2800735C06 /* IKLocationExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IKLocationExampleTests-Info.plist"; sourceTree = "<group>"; };
+		41458ECA1951DC2800735C06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		41458ECC1951DC2800735C06 /* IKLocationExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IKLocationExampleTests.m; sourceTree = "<group>"; };
+		41458ED71951DC5900735C06 /* IKLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKLocation.h; sourceTree = "<group>"; };
+		41458ED81951DC5900735C06 /* IKLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKLocation.m; sourceTree = "<group>"; };
+		41458EDA1951DD2F00735C06 /* IKMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKMainViewController.h; sourceTree = "<group>"; };
+		41458EDB1951DD2F00735C06 /* IKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKMainViewController.m; sourceTree = "<group>"; };
+		41458EDC1951DD2F00735C06 /* IKMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IKMainViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		41458EA11951DC2800735C06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41458EAA1951DC2800735C06 /* CoreGraphics.framework in Frameworks */,
+				41458EAC1951DC2800735C06 /* UIKit.framework in Frameworks */,
+				41458EA81951DC2800735C06 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41458EBC1951DC2800735C06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41458EC11951DC2800735C06 /* XCTest.framework in Frameworks */,
+				41458EC31951DC2800735C06 /* UIKit.framework in Frameworks */,
+				41458EC21951DC2800735C06 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		41458E9B1951DC2700735C06 = {
+			isa = PBXGroup;
+			children = (
+				41458ED61951DC5900735C06 /* IKLocation */,
+				41458EAD1951DC2800735C06 /* IKLocationExample */,
+				41458EC61951DC2800735C06 /* IKLocationExampleTests */,
+				41458EA61951DC2800735C06 /* Frameworks */,
+				41458EA51951DC2800735C06 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		41458EA51951DC2800735C06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				41458EA41951DC2800735C06 /* IKLocationExample.app */,
+				41458EBF1951DC2800735C06 /* IKLocationExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		41458EA61951DC2800735C06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41458EA71951DC2800735C06 /* Foundation.framework */,
+				41458EA91951DC2800735C06 /* CoreGraphics.framework */,
+				41458EAB1951DC2800735C06 /* UIKit.framework */,
+				41458EC01951DC2800735C06 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		41458EAD1951DC2800735C06 /* IKLocationExample */ = {
+			isa = PBXGroup;
+			children = (
+				41458EB61951DC2800735C06 /* IKAppDelegate.h */,
+				41458EB71951DC2800735C06 /* IKAppDelegate.m */,
+				41458EB91951DC2800735C06 /* Images.xcassets */,
+				41458EAE1951DC2800735C06 /* Supporting Files */,
+				41458EDA1951DD2F00735C06 /* IKMainViewController.h */,
+				41458EDB1951DD2F00735C06 /* IKMainViewController.m */,
+				41458EDC1951DD2F00735C06 /* IKMainViewController.xib */,
+			);
+			path = IKLocationExample;
+			sourceTree = "<group>";
+		};
+		41458EAE1951DC2800735C06 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				41458EAF1951DC2800735C06 /* IKLocationExample-Info.plist */,
+				41458EB01951DC2800735C06 /* InfoPlist.strings */,
+				41458EB31951DC2800735C06 /* main.m */,
+				41458EB51951DC2800735C06 /* IKLocationExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		41458EC61951DC2800735C06 /* IKLocationExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				41458ECC1951DC2800735C06 /* IKLocationExampleTests.m */,
+				41458EC71951DC2800735C06 /* Supporting Files */,
+			);
+			path = IKLocationExampleTests;
+			sourceTree = "<group>";
+		};
+		41458EC71951DC2800735C06 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				41458EC81951DC2800735C06 /* IKLocationExampleTests-Info.plist */,
+				41458EC91951DC2800735C06 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		41458ED61951DC5900735C06 /* IKLocation */ = {
+			isa = PBXGroup;
+			children = (
+				41458ED71951DC5900735C06 /* IKLocation.h */,
+				41458ED81951DC5900735C06 /* IKLocation.m */,
+			);
+			path = IKLocation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		41458EA31951DC2800735C06 /* IKLocationExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41458ED01951DC2800735C06 /* Build configuration list for PBXNativeTarget "IKLocationExample" */;
+			buildPhases = (
+				41458EA01951DC2800735C06 /* Sources */,
+				41458EA11951DC2800735C06 /* Frameworks */,
+				41458EA21951DC2800735C06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IKLocationExample;
+			productName = IKLocationExample;
+			productReference = 41458EA41951DC2800735C06 /* IKLocationExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		41458EBE1951DC2800735C06 /* IKLocationExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41458ED31951DC2800735C06 /* Build configuration list for PBXNativeTarget "IKLocationExampleTests" */;
+			buildPhases = (
+				41458EBB1951DC2800735C06 /* Sources */,
+				41458EBC1951DC2800735C06 /* Frameworks */,
+				41458EBD1951DC2800735C06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41458EC51951DC2800735C06 /* PBXTargetDependency */,
+			);
+			name = IKLocationExampleTests;
+			productName = IKLocationExampleTests;
+			productReference = 41458EBF1951DC2800735C06 /* IKLocationExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		41458E9C1951DC2700735C06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = IK;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Inaka;
+				TargetAttributes = {
+					41458EBE1951DC2800735C06 = {
+						TestTargetID = 41458EA31951DC2800735C06;
+					};
+				};
+			};
+			buildConfigurationList = 41458E9F1951DC2700735C06 /* Build configuration list for PBXProject "IKLocationExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 41458E9B1951DC2700735C06;
+			productRefGroup = 41458EA51951DC2800735C06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				41458EA31951DC2800735C06 /* IKLocationExample */,
+				41458EBE1951DC2800735C06 /* IKLocationExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		41458EA21951DC2800735C06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41458EB21951DC2800735C06 /* InfoPlist.strings in Resources */,
+				41458EBA1951DC2800735C06 /* Images.xcassets in Resources */,
+				41458EDE1951DD2F00735C06 /* IKMainViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41458EBD1951DC2800735C06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41458ECB1951DC2800735C06 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		41458EA01951DC2800735C06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41458EB81951DC2800735C06 /* IKAppDelegate.m in Sources */,
+				41458EDD1951DD2F00735C06 /* IKMainViewController.m in Sources */,
+				41458ED91951DC5900735C06 /* IKLocation.m in Sources */,
+				41458EB41951DC2800735C06 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41458EBB1951DC2800735C06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41458ECD1951DC2800735C06 /* IKLocationExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		41458EC51951DC2800735C06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41458EA31951DC2800735C06 /* IKLocationExample */;
+			targetProxy = 41458EC41951DC2800735C06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		41458EB01951DC2800735C06 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41458EB11951DC2800735C06 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		41458EC91951DC2800735C06 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41458ECA1951DC2800735C06 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		41458ECE1951DC2800735C06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		41458ECF1951DC2800735C06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		41458ED11951DC2800735C06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IKLocationExample/IKLocationExample-Prefix.pch";
+				INFOPLIST_FILE = "IKLocationExample/IKLocationExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		41458ED21951DC2800735C06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IKLocationExample/IKLocationExample-Prefix.pch";
+				INFOPLIST_FILE = "IKLocationExample/IKLocationExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		41458ED41951DC2800735C06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IKLocationExample.app/IKLocationExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IKLocationExample/IKLocationExample-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "IKLocationExampleTests/IKLocationExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		41458ED51951DC2800735C06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IKLocationExample.app/IKLocationExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IKLocationExample/IKLocationExample-Prefix.pch";
+				INFOPLIST_FILE = "IKLocationExampleTests/IKLocationExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		41458E9F1951DC2700735C06 /* Build configuration list for PBXProject "IKLocationExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41458ECE1951DC2800735C06 /* Debug */,
+				41458ECF1951DC2800735C06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41458ED01951DC2800735C06 /* Build configuration list for PBXNativeTarget "IKLocationExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41458ED11951DC2800735C06 /* Debug */,
+				41458ED21951DC2800735C06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		41458ED31951DC2800735C06 /* Build configuration list for PBXNativeTarget "IKLocationExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41458ED41951DC2800735C06 /* Debug */,
+				41458ED51951DC2800735C06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 41458E9C1951DC2700735C06 /* Project object */;
+}

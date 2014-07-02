@@ -6,21 +6,21 @@
 //  Copyright (c) 2014 Inaka Networks. All rights reserved.
 //
 
-#import "WGLocation.h"
+#import "IKLocation.h"
 
 
-@interface WGLocation ()
+@interface IKLocation ()
 @property (nonatomic, strong) CLLocationManager *locationManager;
-@property (nonatomic, strong) NSMutableArray *delegates;
+@property (nonatomic, strong) NSPointerArray *delegates;
 @property (nonatomic, strong) NSError *error;
 @end
 
-@implementation WGLocation
+@implementation IKLocation
 + (instancetype)sharedLocation {
-    static WGLocation *_sharedClient = nil;
+    static IKLocation *_sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedClient = [[WGLocation alloc] init];
+        _sharedClient = [[IKLocation alloc] init];
     });
     
     return _sharedClient;
@@ -30,33 +30,45 @@
     if (self = [super init]) {
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         [self.locationManager startUpdatingLocation];
         
         self.locationAvailable = NO;
         self.error = nil;
-        self.delegates = [[NSMutableArray alloc] init];
+        self.delegates = [NSPointerArray weakObjectsPointerArray];
     }
     return self;
 }
 
+- (void) refreshLocation{
+    self.locationAvailable = NO;
+    self.error = nil;
+    _oldLocation = nil;
+    _location = nil;
+    _city = nil;
+    _state = nil;
+    _country = nil;
+    
+    [self.locationManager startUpdatingLocation];
+}
+
 - (void) setDelegate:(id)delegate{
-    [self.delegates addObject:delegate];
+    [self.delegates addPointer:(__bridge void *)delegate];
     
     if (_locationAvailable) {
-        if (!self.error) {
-            if ([delegate respondsToSelector:@selector(wgManager:didUpdateToLocation:fromLocation:)]) {
-                [delegate wgManager:self didUpdateToLocation:_location fromLocation:_oldLocation];
-            }
-        }else{
-            if ([delegate respondsToSelector:@selector(wgManagerDidFailWithError:)]) {
-                [delegate wgManagerDidFailWithError:self.error];
-            }
+        if ([delegate respondsToSelector:@selector(ikManager:didUpdateToLocation:fromLocation:)]) {
+            [delegate ikManager:self didUpdateToLocation:_location fromLocation:_oldLocation];
         }
     }
-    
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
+
+    NSTimeInterval howRecent = [newLocation.timestamp timeIntervalSinceNow];
+    if( abs(howRecent) > 5.0 ) {
+        return;
+    }
+
     _oldLocation = oldLocation;
     _location = newLocation;
     _latitude = newLocation.coordinate.latitude;
@@ -76,7 +88,7 @@
             
             [self notifyDelegatesLocationSuccessful];
             
-            NSLog(@"WLLocation: %@ %@ %@",_city, _state, _country);
+            NSLog(@"IKLocation: %@ %@ %@",_city, _state, _country);
         }
     }];
 }
@@ -85,21 +97,26 @@
     self.error = error;
     [self notifyDelegatesLocationFailed];
     
-    NSLog(@"WLLocation: Failed To Update Location. %@", error);
+    NSLog(@"IKLocation: Failed To Update Location. %@", error);
 }
 
 - (void) notifyDelegatesLocationSuccessful{
-    for (id delegate in self.delegates) {
-        if ([delegate respondsToSelector:@selector(wgManager:didUpdateToLocation:fromLocation:)]) {
-            [delegate wgManager:self didUpdateToLocation:_location fromLocation:_oldLocation];
+    for (int i = 0; i < self.delegates.count; i++) {
+        id delegate = [self.delegates pointerAtIndex:i];
+        
+        if ([delegate respondsToSelector:@selector(ikManager:didUpdateToLocation:fromLocation:)]) {
+            [delegate ikManager:self didUpdateToLocation:_location fromLocation:_oldLocation];
+        }else{
+            [self.delegates replacePointerAtIndex:i withPointer:NULL];
         }
     }
+    [self.delegates compact];
 }
 
 - (void) notifyDelegatesLocationFailed{
     for (id delegate in self.delegates) {
-        if ([delegate respondsToSelector:@selector(wgManagerDidFailWithError:)]) {
-            [delegate wgManagerDidFailWithError:self.error];
+        if ([delegate respondsToSelector:@selector(ikManagerDidFailWithError:)]) {
+            [delegate ikManagerDidFailWithError:self.error];
         }
     }
 }

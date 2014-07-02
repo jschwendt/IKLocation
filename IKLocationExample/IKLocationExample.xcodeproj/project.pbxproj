@@ -162,7 +162,8 @@
 				41458ED71951DC5900735C06 /* IKLocation.h */,
 				41458ED81951DC5900735C06 /* IKLocation.m */,
 			);
-			path = IKLocation;
+			name = IKLocation;
+			path = ../IKLocation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,6 +463,7 @@
 				41458ED21951DC2800735C06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		41458ED31951DC2800735C06 /* Build configuration list for PBXNativeTarget "IKLocationExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +472,7 @@
 				41458ED51951DC2800735C06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

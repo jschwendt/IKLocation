@@ -5,7 +5,7 @@ If you need to get the device location in multiple sections of the app `CLLocati
 
 Installation and usage
 ----------------------
-1. Copy `IKLocation.h` and `IKLocation.m` to your project. (or you can just add it as a pod. pod 'IKLocation')
+1. Copy `IKLocation.h` and `IKLocation.m` to your project. (or you can just add it as a pod. `pod 'IKLocation'`)
 2. Call `[IKLocation sharedClient]` when you want your app to prompt the user to allow access location.
 3. Implement `IKLocationDelegate`
 4. Add all the objects that implements the delegate. `[[IKLocation sharedLocation] setDelegate:self];`

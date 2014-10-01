@@ -3,6 +3,15 @@ IKLocation
 
 If you need to get the device location in multiple sections of the app `CLLocationManager` may be a solution. `CLLocationManager` is a wrapper to avoid using multiple `CLLocationManager` across an application. All delegates added to IKLocation are notified when the location is available or when the `refresh` method is called. `IKLocation` automatically removes object when those are deallocated.
 
+Contact Us
+----------------------
+For **questions** or **general comments** regarding the use of this library, please use our public
+[hipchat room](https://www.hipchat.com/gpBpW3SsT).
+
+If you find any **bugs** or have a **problem** while using this library, please [open an issue](https://github.com/inaka/IKLocation/issues/new) in this repo (or a pull request :)).
+
+And you can check all of our open-source projects at [inaka.github.io](http://inaka.github.io)
+
 Installation and usage
 ----------------------
 1. Copy `IKLocation.h` and `IKLocation.m` to your project. (or you can just add it as a pod. `pod 'IKLocation'`)

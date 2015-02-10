@@ -6,11 +6,11 @@
 #
 Pod::Spec.new do |s|
   s.name             = "IKLocation"
-  s.version          = "1.0"
-  s.source           = { :git => "git@github.com:inaka/IKLocation.git", :tag => s.version.to_s }
+  s.version          = "1.1"
+  s.source           = { :git => "git@github.com:jschwendt/IKLocation.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/inaka'
-  s.authors =  { 'Andres Canal' => 'andres@inakanetworks.com' }
-  s.homepage = "https://github.com/inaka"
+  s.authors =  { 'Andres Canal' => 'andres@inakanetworks.com', 'Joe Schwendt' => 'Joe@Schwendt.com' }
+  s.homepage = "https://github.com/jschwendt/IKLocation"
   s.license = { :type => 'BSD' }
   s.requires_arc = true
   s.source_files  = 'IKLocation/*.{h,m}'

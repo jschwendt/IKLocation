@@ -20,13 +20,17 @@
 
 @property (readonly) CGFloat latitude;
 @property (readonly) CGFloat longitude;
-@property (nonatomic, getter = isLocationAvailable) BOOL locationAvailable;
+@property (nonatomic) BOOL locationAvailable;
 
 @property (nonatomic,readonly) NSString *city;
 @property (nonatomic,readonly) NSString *state;
 @property (nonatomic,readonly) NSString *country;
 
+@property (nonatomic) NSTimeInterval cacheTimeout;
+
 + (instancetype)sharedLocation;
 - (void) setDelegate:(id)delegate;
 - (void) refreshLocation;
+- (BOOL)isLocationAvailable;
+
 @end

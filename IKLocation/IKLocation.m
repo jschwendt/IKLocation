@@ -28,10 +28,19 @@
 
 - (id)init {
     if (self = [super init]) {
+        self.cacheTimeout=5.0;
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        [self.locationManager startUpdatingLocation];
+        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+            [self.locationManager requestWhenInUseAuthorization];
+        }
+        CLAuthorizationStatus locationAuthStatus = [CLLocationManager authorizationStatus];
+        if ((locationAuthStatus == kCLAuthorizationStatusNotDetermined) && (NSFoundationVersionNumber<=NSFoundationVersionNumber_iOS_7_1)) {
+            [self.locationManager startUpdatingLocation];
+        } else if (locationAuthStatus == kCLAuthorizationStatusAuthorizedWhenInUse || locationAuthStatus == kCLAuthorizationStatusAuthorized) {
+            [self.locationManager startUpdatingLocation];
+        }
         
         self.locationAvailable = NO;
         self.error = nil;
@@ -62,14 +71,18 @@
     }
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
-
-    NSTimeInterval howRecent = [newLocation.timestamp timeIntervalSinceNow];
-    if( abs(howRecent) > 5.0 ) {
-        return;
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    if (locations.count>1) {
+        [self locationManager:manager didUpdateToLocation:[locations lastObject] fromLocation:[locations objectAtIndex:1]];
+    } else {
+        [self locationManager:manager didUpdateToLocation:[locations lastObject] fromLocation:nil];
     }
+}
 
-    _oldLocation = oldLocation;
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+    if (oldLocation) {
+        _oldLocation = oldLocation;
+    }
     _location = newLocation;
     _latitude = newLocation.coordinate.latitude;
     _longitude = newLocation.coordinate.longitude;
@@ -88,7 +101,7 @@
             
             [self notifyDelegatesLocationSuccessful];
             
-            NSLog(@"IKLocation: %@ %@ %@",_city, _state, _country);
+            NSLog(@"Location: %@ %@ %@",_city, _state, _country);
         }
     }];
 }
@@ -100,7 +113,7 @@
     NSLog(@"IKLocation: Failed To Update Location. %@", error);
 }
 
-- (void) notifyDelegatesLocationSuccessful{
+- (void) notifyDelegatesLocationSuccessful {
     for (int i = 0; i < self.delegates.count; i++) {
         id delegate = [self.delegates pointerAtIndex:i];
         
@@ -113,7 +126,7 @@
     [self.delegates compact];
 }
 
-- (void) notifyDelegatesLocationFailed{
+- (void) notifyDelegatesLocationFailed {
     for (id delegate in self.delegates) {
         if ([delegate respondsToSelector:@selector(ikManagerDidFailWithError:)]) {
             [delegate ikManagerDidFailWithError:self.error];
@@ -121,7 +134,14 @@
     }
 }
 
-- (BOOL) isLocationAbailable{
+- (BOOL)isLocationAvailable {
+    if (self.locationAvailable) {
+        NSTimeInterval locationAge = [_location.timestamp timeIntervalSinceNow];
+        if (abs(locationAge) > self.cacheTimeout) {
+            [self refreshLocation];
+        }
+    }
+
     return self.locationAvailable;
 }
 

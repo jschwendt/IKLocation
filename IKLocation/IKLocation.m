@@ -45,6 +45,7 @@
         self.locationAvailable = NO;
         self.error = nil;
         self.delegates = [NSPointerArray weakObjectsPointerArray];
+        [self isLocationServicesAuthorized];
     }
     return self;
 }
@@ -68,6 +69,15 @@
         if ([delegate respondsToSelector:@selector(ikManager:didUpdateToLocation:fromLocation:)]) {
             [delegate ikManager:self didUpdateToLocation:_location fromLocation:_oldLocation];
         }
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    if (status == kCLAuthorizationStatusDenied) {
+		locationServicesAuthorized=NO;
+    } else if (status == kCLAuthorizationStatusAuthorized) {
+		[self notifyDelegatesDidRecieveUserAuthorization];
+		locationServicesAuthorized=YES;
     }
 }
 
@@ -134,6 +144,14 @@
     }
 }
 
+- (void) notifyDelegatesDidRecieveUserAuthorization {
+   for (id delegate in self.delegates) {
+        if ([delegate respondsToSelector:@selector(ikManagerDidRecieveUserAuthorization)]) {
+            [delegate ikManagerDidRecieveUserAuthorization];
+        }
+    }
+}
+
 - (BOOL)isLocationAvailable {
     if (self.locationAvailable) {
         NSTimeInterval locationAge = [_location.timestamp timeIntervalSinceNow];
@@ -143,6 +161,17 @@
     }
 
     return self.locationAvailable;
+}
+
+- (BOOL)isLocationServicesAuthorized {
+    if (!self.locationServicesAuthorized) {
+        CLAuthorizationStatus locationAuthStatus = [CLLocationManager authorizationStatus];
+        if (locationAuthStatus == kCLAuthorizationStatusAuthorizedWhenInUse || locationAuthStatus == kCLAuthorizationStatusAuthorized) {
+			self.locationServicesAuthorized=YES;
+		}
+    }
+
+    return self.locationServicesAuthorized;
 }
 
 @end

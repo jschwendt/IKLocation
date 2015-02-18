@@ -12,6 +12,7 @@
 @protocol IKLocationDelegate <NSObject>
 - (void)ikManagerDidFailWithError:(NSError *)error;
 - (void)ikManager:(id) manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation;
+- (void)ikManagerDidRecieveUserAuthorization;
 @end
 
 @interface IKLocation : NSObject <CLLocationManagerDelegate>
@@ -21,6 +22,7 @@
 @property (readonly) CGFloat latitude;
 @property (readonly) CGFloat longitude;
 @property (nonatomic) BOOL locationAvailable;
+@property (nonatomic) BOOL locationServicesAuthorized;
 
 @property (nonatomic,readonly) NSString *city;
 @property (nonatomic,readonly) NSString *state;
@@ -32,5 +34,6 @@
 - (void) setDelegate:(id)delegate;
 - (void) refreshLocation;
 - (BOOL)isLocationAvailable;
+- (BOOL)isLocationServicesAuthorized;
 
 @end

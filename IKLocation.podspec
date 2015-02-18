@@ -6,7 +6,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = "IKLocation"
-  s.version          = "1.3"
+  s.version          = "1.4"
   s.source           = { :git => "git@github.com:jschwendt/IKLocation.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/inaka'
   s.authors =  { 'Andres Canal' => 'andres@inakanetworks.com', 'Joe Schwendt' => 'Joe@Schwendt.com' }

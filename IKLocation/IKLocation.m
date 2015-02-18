@@ -90,6 +90,7 @@
     } else if ((status == kCLAuthorizationStatusAuthorized) || (status == kCLAuthorizationStatusAuthorizedWhenInUse) || (status == kCLAuthorizationStatusAuthorizedAlways)) {
 		self.locationServicesAuthorized=YES;
         [self notifyDelegatesDidRecieveUserAuthorization];
+        [self broadcastDidRecieveUserAuthorization];
     }
 }
 
@@ -162,6 +163,10 @@
             [delegate ikManagerDidRecieveUserAuthorization];
         }
     }
+}
+
+- (void) broadcastDidRecieveUserAuthorization {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"LocationServicesDidRecieveUserAuthorization" object:self];
 }
 
 - (BOOL)isLocationAvailable {

@@ -63,7 +63,19 @@
 }
 
 - (void) setDelegate:(id)delegate{
-    [self.delegates addPointer:(__bridge void *)delegate];
+    BOOL delegateAlreadySet=NO;
+    void * delegatePtr = (__bridge void *)delegate;
+    for (NSUInteger i = 0; i < [self.delegates count]; i++) {
+        void * ptr = [self.delegates pointerAtIndex:i];
+        
+        if (ptr == delegatePtr) {
+            delegateAlreadySet=YES;
+        }
+    }
+    
+    if (delegateAlreadySet==NO) {
+        [self.delegates addPointer:delegatePtr];
+    }
     
     if (_locationAvailable) {
         if ([delegate respondsToSelector:@selector(ikManager:didUpdateToLocation:fromLocation:)]) {
@@ -74,10 +86,10 @@
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     if (status == kCLAuthorizationStatusDenied) {
-		locationServicesAuthorized=NO;
-    } else if (status == kCLAuthorizationStatusAuthorized) {
-		[self notifyDelegatesDidRecieveUserAuthorization];
-		locationServicesAuthorized=YES;
+        self.locationServicesAuthorized=NO;
+    } else if ((status == kCLAuthorizationStatusAuthorized) || (status == kCLAuthorizationStatusAuthorizedWhenInUse) || (status == kCLAuthorizationStatusAuthorizedAlways)) {
+		self.locationServicesAuthorized=YES;
+        [self notifyDelegatesDidRecieveUserAuthorization];
     }
 }
 
@@ -145,7 +157,7 @@
 }
 
 - (void) notifyDelegatesDidRecieveUserAuthorization {
-   for (id delegate in self.delegates) {
+    for (id delegate in self.delegates) {
         if ([delegate respondsToSelector:@selector(ikManagerDidRecieveUserAuthorization)]) {
             [delegate ikManagerDidRecieveUserAuthorization];
         }
@@ -166,7 +178,7 @@
 - (BOOL)isLocationServicesAuthorized {
     if (!self.locationServicesAuthorized) {
         CLAuthorizationStatus locationAuthStatus = [CLLocationManager authorizationStatus];
-        if (locationAuthStatus == kCLAuthorizationStatusAuthorizedWhenInUse || locationAuthStatus == kCLAuthorizationStatusAuthorized) {
+        if (locationAuthStatus == kCLAuthorizationStatusAuthorizedWhenInUse || locationAuthStatus == kCLAuthorizationStatusAuthorizedAlways || locationAuthStatus == kCLAuthorizationStatusAuthorized) {
 			self.locationServicesAuthorized=YES;
 		}
     }
